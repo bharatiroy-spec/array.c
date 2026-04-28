@@ -1,0 +1,84 @@
+#include <stdio.h>
+int main() {
+    int n,m,a,b,rows,cols, i, j;
+   // int A[20][20]={0},B[20][20]={0};
+    
+    printf("For Matrix A:\n");
+    printf("Enter number of rows: ");
+    scanf("%d", &n);
+    printf("Enter number of columns: ");
+    scanf("%d", &m);
+    int A[n][m];
+    // Input Matrix A
+    printf("\nEnter elements of Matrix A:\n");
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++) {
+            printf("The %d %d element is:",i,j);
+            scanf("%d", &A[i][j]);
+        }
+    }
+    printf("For Matrix B:\n");
+    printf("Enter number of rows: ");
+    scanf("%d", &a);
+    printf("Enter number of columns: ");
+    scanf("%d", &b);
+    int B[a][b];
+    // Input Matrix B
+    printf("Enter elements of Matrix B:\n");
+    for (i = 0; i < a; i++) {
+        for (j = 0; j < b; j++) {
+            printf("The %d %d element is:",i,j);
+            scanf("%d", &B[i][j]);
+        }
+    }
+  if(n>a){
+  				rows=n;
+  				}else{
+  						rows=a;
+  						}
+  			if(m>b){
+  				cols=m;
+  				}else{
+  						cols=b;
+  						}			
+    int C[rows][cols];
+   
+    
+    // Display Matrix A
+    printf("\n\nMatrix A:\n");
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++) {
+            printf("%d\t", A[i][j]);
+        }
+        printf("\n");
+    }
+    
+    // Display Matrix B
+    printf("\nMatrix B:\n");
+    for (i = 0; i < a; i++) {
+        for (j = 0; j < b; j++) {
+            printf("%d\t", B[i][j]);
+        }
+        printf("\n");
+    }
+     if(n!=a || m!=b){
+    					printf("Error:Matrices must have the same dimensions for subtraction.\n");
+    	}else{
+    // Add matrices
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            C[i][j] = A[i][j] - B[i][j];
+        }
+    }
+    
+    // Display Result
+    printf("\nA - B =\n");
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j <cols; j++) {
+            printf("%d\t", C[i][j]);
+        }
+        printf("\n");
+    }
+    }
+    return 0;
+}
