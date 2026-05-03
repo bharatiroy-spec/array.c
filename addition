@@ -1,14 +1,14 @@
 #include <stdio.h>
 int main() {
     int n,m,a,b,rows,cols, i, j;
-    int A[20][20]={0},B[20][20]={0};
+    
     
     printf("For Matrix A:\n");
     printf("Enter number of rows: ");
     scanf("%d", &n);
     printf("Enter number of columns: ");
     scanf("%d", &m);
-    //int A[n][m];
+    int A[n][m];
     // Input Matrix A
     printf("\nEnter elements of Matrix A:\n");
     for (i = 0; i < n; i++) {
@@ -22,7 +22,7 @@ int main() {
     scanf("%d", &a);
     printf("Enter number of columns: ");
     scanf("%d", &b);
-    //int B[a][b];
+    int B[a][b];
     // Input Matrix B
     printf("Enter elements of Matrix B:\n");
     for (i = 0; i < a; i++) {
@@ -43,12 +43,15 @@ int main() {
     }
     int C[rows][cols];
     // Add matrices
-    for (i = 0; i < rows; i++) {
-        for (j = 0; j < cols; j++) {
+    if(n!=a || m!=b){
+        printf("Error:Matrices must have the same dimensions for addition\n");
+    }else{
+        for (i = 0; i < rows; i++) {
+             for (j = 0; j < cols; j++) {
             C[i][j] = A[i][j] + B[i][j];
         }
     }
-    
+    }
     // Display Matrix A
     printf("\n\nMatrix A:\n");
     for (i = 0; i < n; i++) {
